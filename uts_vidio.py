@@ -38,33 +38,6 @@ while(cap.isOpened()):
     
     cv2.imshow('Hasil', numpy_horizontal_concat_v)
 
-    # check OpenCV version to avoid unpacking error
-    (version, _, _) = cv2.__version__.split('.')
-
-    print(version)
-
-    # if version == '3':
-    #     image, contours, hierarchy = cv2.findContours(otsu.copy(), cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
-    # elif version == '2':
-    #     contours, hierarchy = cv2.findContours(otsu.copy(),cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
-    # elif version == '4':
-    #     contours, hierarchy = cv2.findContours(otsu.copy(), cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
-
-	
-    # # find contour with max area
-    # cnt = max(contours, key = lambda x: cv2.contourArea(x))
-    # # create bounding rectangle around the contour
-    # x,y,w,h = cv2.boundingRect(cnt)
-    # cv2.rectangle(crop_img,(x,y),(x+w,y+h),(0,0,255),0)
-
-    # # finding convex hull
-    # hull = cv2.convexHull(cnt)
-
-    # # drawing contours
-    # drawing = np.zeros(crop_img.shape,np.uint8)
-    # cv2.drawContours(drawing,[cnt],0,(0,255,0),0)
-    # cv2.drawContours(drawing,[hull],0,(0,0,255),0)
-
     ret1,global_threshold = cv2.threshold(img,127,255,cv2.THRESH_BINARY)
 
     imS = cv2.resize(img, (700, 400))
